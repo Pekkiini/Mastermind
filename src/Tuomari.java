@@ -45,7 +45,7 @@ public class Tuomari {
            for(int indeksi : tarkastettavatIndeksit ){
                if(kone.haeIndeksi(indeksi) == seuraavaVapaa ){
                    valkoistenMaara++;
-                   int loydetty = kone.haeIndeksi(indeksi);
+                    int loydetty = kone.haeIndeksi(indeksi);
                    tarkastettavatIndeksit.remove(new Integer (loydetty) );
                    break;
                    
