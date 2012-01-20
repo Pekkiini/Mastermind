@@ -18,7 +18,7 @@ public class HARKKATYO {
         Arvaus pelaajan = new Arvaus();
         Arvaus koneen = new Arvaus();
         
-       int [] pelaajankoodi = {1,4,4,4};
+       int [] pelaajankoodi = {0,4,4,4};
         int [] koneenkoodi =  {4,0,0,0};
         
         

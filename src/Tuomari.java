@@ -40,19 +40,22 @@ public class Tuomari {
             tarkastettavatIndeksit.remove(new Integer(luku));
         }
         
-        for(int vapaaIndeksi : tarkastettavatIndeksit){
-         int seuraavaVapaa =  pelaaja.haeIndeksi(vapaaIndeksi);
-           for(int indeksi : tarkastettavatIndeksit ){
-               if(kone.haeIndeksi(indeksi) == seuraavaVapaa ){
-                   valkoistenMaara++;
-                    int loydetty = kone.haeIndeksi(indeksi);
-                   tarkastettavatIndeksit.remove(new Integer (loydetty) );
-                   break;
+    //    for(int vapaaIndeksi : tarkastettavatIndeksit){
+     //    int seuraavaVapaa =  pelaaja.haeIndeksi(vapaaIndeksi);
+      //     for(int indeksi : tarkastettavatIndeksit ){
+        //       if(kone.haeIndeksi(indeksi) == seuraavaVapaa ){
+           //        valkoistenMaara++;
+            //        int loydetty = kone.haeIndeksi(indeksi);
+           //        tarkastettavatIndeksit.remove(new Integer (loydetty) );
+          //         break;
                    
-               }
-           }
+        //       }
+       //    }
            
-        }
+      //  }
+        
+        
+       
         
 
         System.out.println("Vinkki.  Mustia: " + mustienMaara + "    Valkoisia: "
