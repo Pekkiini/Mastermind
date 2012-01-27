@@ -1,4 +1,8 @@
+package Kayttoliittyma;
 
+import java.awt.Container;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 /*
  * To change this template, choose Tools | Templates
@@ -14,34 +18,28 @@ public class HARKKATYO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
-        Arvaus pelaajan = new Arvaus();
-        Arvaus koneen = new Arvaus();
+
+        JFrame ikkuna = new JFrame();
         
-       int [] pelaajankoodi = {0,4,4,4};
-        int [] koneenkoodi =  {4,0,0,0};
+        Piirturi piirturi = new Piirturi();
+
+        Container container = ikkuna.getContentPane();
         
-        
-        
-        pelaajan.asetaArvaus(pelaajankoodi);
-        koneen.asetaArvaus(koneenkoodi);
-        System.out.println("ALKU");
-        koneen.naytaArvaus();
-        
-        Tuomari tuomari = new Tuomari();
-        
-        
-        
-       tuomari.vertaaRiveja(pelaajan, koneen);
-        System.out.println("LOPPU");
-       koneen.naytaArvaus();
-        
-     //  Kierros kierros = new Kierros();
-      //  kierros.naytaKoneenKoodi(); System.out.println("");
-      //  kierros.pelaaPeli();
-      //  System.out.println("");
-      //  System.out.println("");
-       // kierros.naytaKoneenKoodi();
-        
+        container.add(piirturi);
+        ikkuna.addKeyListener(piirturi);
+
+        ikkuna.setSize(300, 400);
+        ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        ikkuna.setVisible(true);
+
+
+
+//       Kierros kierros = new Kierros();
+//        
+//        kierros.pelaaPeli();
+//        System.out.println("");
+//        System.out.println("");
+//        kierros.naytaKoneenKoodi();
+//        
     }
 }

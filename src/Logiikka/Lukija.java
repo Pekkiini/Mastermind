@@ -1,3 +1,4 @@
+package Logiikka;
 
 import java.util.Scanner;
 /*
@@ -15,7 +16,10 @@ public class Lukija {
 
     public Lukija() {
     }
-
+   /**
+     * 
+     * @return palauttaa käyttäjän syötteestä luodun Arvaus olion
+     */
     public Arvaus lueJaTallennaArvaus() {
         Arvaus arvaus = new Arvaus();
         boolean looppi = true;
@@ -28,11 +32,14 @@ public class Lukija {
                 System.out.println("Lukujen täytyy olla väliltä 0-5!");
                 looppi = true;
             }
-            
         }
         return arvaus;
     }
-
+   /**
+     * Tarkistaa onko annettu taulukko oikeaa muotoa
+     * @param taulukko on kok.lukutaulukko
+     * @return true/fasle
+     */
     public boolean tarkistaArvaus(int[] taulukko) {
         for (int luku : taulukko) {
             if (luku < 0 || luku > 5) {
@@ -41,7 +48,11 @@ public class Lukija {
         }
         return true;
     }
-
+  
+    /**
+     * Kyselee käyttäjältä lukuja
+     * @return käyttäjän syöttämät luvut
+     */
     public int[] lueLuvut() {
         int[] luvut = new int[4];
         System.out.println("Anna 4 lukua : (Väliltä 0-5)");

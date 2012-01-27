@@ -1,3 +1,5 @@
+package Logiikka;
+
 
 import java.util.*;
 /*
@@ -6,7 +8,7 @@ import java.util.*;
  */
 
 /**
- *
+ *Luo arvattavan koodin
  * @author pekkotuo
  */
 public class KoodiArpoja {
@@ -21,6 +23,11 @@ public class KoodiArpoja {
         }
     }
 
+    /**
+     * 
+     * @param j on haettava indeksi
+     * @return palautetaan koodista kohdassa j oleva nappi
+     */
     public int getNappula(int j) {
         return koodi [j];
     }
@@ -30,6 +37,10 @@ public class KoodiArpoja {
        
     }
     
+     /**
+     * 
+     * @return luotu koodi
+     */
     public int [] haeKoodi(){
         return koodi;
     }

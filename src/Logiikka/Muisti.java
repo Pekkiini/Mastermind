@@ -1,3 +1,4 @@
+package Logiikka;
 
 import java.util.*;
 /*
@@ -6,29 +7,42 @@ import java.util.*;
  */
 
 /**
- *
+ * Tämä luokka on nimeltään Muisti
  * @author pekkotuo
  */
 public class Muisti {
 
-    private ArrayList<Arvaus> siirrot;
-
+    public ArrayList<Arvaus> siirrot;
+    /**
+     * 
+     */
     public Muisti() {
         siirrot = new ArrayList<Arvaus>();
     }
+
+    /**
+     * Tallentaa pelaajan tekemän arvauksen
+     * @param arvaus on pelaajan tekemä arvaus
+     */
     public void lisaaArvaus(Arvaus arvaus) {
         siirrot.add(arvaus);
     }
 
-    public void naytaArvaukset() {
-        System.out.println("Aikaisemmat siirtosi:");
+    /**
+     * Luettelee muistissa olevat aikaisemmat arvaukset
+     * @return muistissa olevat arvaukset palautteineen
+     */
+    public String palautaArvaukset() {
+        String vastaus = "";
+        vastaus = vastaus + "Aikaisemmat siirtosi:\n";
         int numero = 1;
         for (Arvaus arvaus : siirrot) {
-            System.out.print(numero + ".   ");
-            arvaus.naytaArvaus();
+            vastaus = vastaus + " " + numero + ".   ";
+            vastaus = vastaus + arvaus.palautaArvaus();
             numero++;
-            System.out.println("");
-            System.out.println("");
+            vastaus = vastaus + "\n";
+
         }
+        return vastaus;
     }
 }
