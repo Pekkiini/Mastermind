@@ -7,7 +7,7 @@ import java.util.*;
  */
 
 /**
- *
+ * Pisteyttää pelaajan arvauksen.
  * @author pekkotuo
  */
 public class Tuomari {
@@ -21,10 +21,10 @@ public class Tuomari {
         mustienMaara = 0;
         valkoistenMaara = 0;
         koneentarkastettavatIndeksit = new ArrayList<Integer>();
-        AlustaTarkastettavatIndeksit(koneentarkastettavatIndeksit);
+        alusta(koneentarkastettavatIndeksit);
 
         pelaajantarkastettavatIndeksit = new ArrayList<Integer>();
-        AlustaTarkastettavatIndeksit(pelaajantarkastettavatIndeksit);
+        alusta(pelaajantarkastettavatIndeksit);
     }
     /**
      * Vertaa pelaajan arvausta ohjelman koodiin
@@ -33,34 +33,34 @@ public class Tuomari {
      * @param kone parametri on ohjelman generoima oikea koodirivi
      * @return Palauttaa String olion, jossa mustien ja valkoisten määrä
      */
-    public String vertaaRiveja(Arvaus pelaaja, Arvaus kone) {
-        String palautus = "";
+    public int [] vertaaRiveja(Arvaus pelaaja, Arvaus kone) {
+//        String palautus = "";
 
         tarkistaMustienMaara(pelaaja, kone);
 
         for (int i = 0; i < 4; i++) {
             tarkistaValkoistenMaara(pelaaja, kone);
         }
-        palautus = palautus + "Vinkki.  Mustia: " + mustienMaara + "    Valkoisia: "
-                + valkoistenMaara;
+//        palautus = palautus + "Vinkki.  Mustia: " + mustienMaara + "    Valkoisia: "
+//                + valkoistenMaara;
 
-        tyhjennaTarkastettavatIndeksit(koneentarkastettavatIndeksit);
+        tyhjenna(koneentarkastettavatIndeksit);
 
-        AlustaTarkastettavatIndeksit(koneentarkastettavatIndeksit);
-        AlustaTarkastettavatIndeksit(pelaajantarkastettavatIndeksit);
+        alusta(koneentarkastettavatIndeksit);
+        alusta(pelaajantarkastettavatIndeksit);
 
-        int[] vinkit = {mustienMaara, valkoistenMaara};
+        int [] vinkit = {mustienMaara, valkoistenMaara};
         pelaaja.lisaaPalaute(vinkit);
         mustienMaara = 0;
         valkoistenMaara = 0;
 
-        return palautus;
+        return vinkit;
     }
    /**
      * Lisaa parametrina annettuun listaan numerot 0-3 
      * @param lista on Kokonaislukuja sisältävä ArrayLista
      */
-    public static void AlustaTarkastettavatIndeksit(ArrayList<Integer> lista) {
+    public static void alusta(ArrayList<Integer> lista) {
         lista.add(0);
         lista.add(1);
         lista.add(2);
@@ -87,11 +87,11 @@ public class Tuomari {
             pelaajantarkastettavatIndeksit.remove(new Integer(luku));
         }
 
-        if (mustienMaara == 4) {
-
-            System.out.println("Voitit!");
-            System.exit(0);
-        }
+//        if (mustienMaara == 4) {
+//
+//            System.out.println("Voitit!");
+//            System.exit(0);
+//        }
     }
 
     /**
@@ -118,7 +118,7 @@ public class Tuomari {
      * Tyhjentää parametrina annetun listan kaikista alkioista
      * @param lista on kokonaislukuja sisältävä ArrayLista 
      */
-    public void tyhjennaTarkastettavatIndeksit(ArrayList<Integer> lista) {
+    public void tyhjenna(ArrayList<Integer> lista) {
         ArrayList<Integer> koneenRivistaPoistettavat = new ArrayList<Integer>();
         for (int luku : koneentarkastettavatIndeksit) {
             koneenRivistaPoistettavat.add(luku);

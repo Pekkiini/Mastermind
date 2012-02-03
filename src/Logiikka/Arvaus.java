@@ -7,7 +7,7 @@ package Logiikka;
  */
 
 /**
- *
+ * Pelaajan arvauksenn synnyttämä kokonaislukutaulukon sisältävä olio. 
  * @author pekkotuo
  */
 public class Arvaus {
@@ -18,11 +18,12 @@ public class Arvaus {
     public Arvaus() {
         nappulaLuvut = new int[4];
         palaute = new int[2];
-      
+       
     }
     
     public Arvaus (int [] taulukko){
         this.nappulaLuvut = taulukko;
+        
     }
 
     /**

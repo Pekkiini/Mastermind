@@ -8,7 +8,8 @@ import Logiikka.*;
  */
 
 /**
- *
+ * Pyöritti pelin tekstiseikkailuversiota.
+ * Rooli saattaa GUI:n myötä muuttua
  * @author pekkotuo
  */
 public class Kierros {
@@ -19,7 +20,7 @@ public class Kierros {
     private KoodiArpoja kone;
     private Arvaus koneen ;
     private Arvaus ihmisen;
-    private final int kierrostenMaara = 9;
+    private final int kierrostenMaara = 2;
 
     public Kierros() {
         muisti = new Muisti();
@@ -28,6 +29,7 @@ public class Kierros {
         kone = new KoodiArpoja();
         koneen = new Arvaus();
         ihmisen = new Arvaus();
+        
     }
 
     /**
@@ -35,8 +37,7 @@ public class Kierros {
      */
     public void pelaaPeli() {
        
-        koneen.asetaArvaus(kone.haeKoodi());
-
+       koneen = kone.luoArvattavaKoodi();
 
         for (int k = 0; k <= kierrostenMaara; k++) {
 

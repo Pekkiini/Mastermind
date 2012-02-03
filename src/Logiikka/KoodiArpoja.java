@@ -44,4 +44,9 @@ public class KoodiArpoja {
     public int [] haeKoodi(){
         return koodi;
     }
+    
+    public Arvaus luoArvattavaKoodi(){
+        Arvaus koneenKoodi = new Arvaus(haeKoodi());
+        return koneenKoodi;
+    }
 }

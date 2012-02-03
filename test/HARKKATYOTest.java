@@ -5,6 +5,7 @@
 import java.util.Scanner;
 import Logiikka.Arvaus;
 import Logiikka.KoodiArpoja;
+import Logiikka.Logica;
 import Logiikka.Lukija;
 import Logiikka.Muisti;
 import Logiikka.Tuomari;
@@ -133,4 +134,16 @@ public class HARKKATYOTest {
         muisti.lisaaArvaus(arvaus);
         assertNotSame(null, muisti.siirrot.get(0));
     }
+    @Test
+    public void logicaOsaaTuomita(){
+        Logica logiikka = new Logica();
+        int [] pelaaja = {4,3,1,2};
+        int [] kone = {4,3,2,1};
+        Arvaus p = new Arvaus(pelaaja);
+        Arvaus k = new Arvaus(kone);
+        int [] actual = logiikka.tuomitse(p, k);
+        int [] oikea = {2,2};
+       assertArrayEquals(null, oikea, actual);
+    }
+    
 }

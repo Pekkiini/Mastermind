@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 
 /**
- *
+ * Käy vuoropuhelua käyttäjän kanssa. Lukee käyttäjän syötteen. 
  * @author pekkotuo
  */
 public class Lukija {

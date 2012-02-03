@@ -7,7 +7,7 @@ import java.util.*;
  */
 
 /**
- * Tämä luokka on nimeltään Muisti
+ * Muistaa pelaajan pelin aikana tekemät arvaukset
  * @author pekkotuo
  */
 public class Muisti {
