@@ -7,6 +7,7 @@ import java.util.*;
  */
 
 /**
+ * Tätä luokkaa ei GUIssa käytetä
  * Muistaa pelaajan pelin aikana tekemät arvaukset
  * @author pekkotuo
  */

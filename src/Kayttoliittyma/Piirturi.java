@@ -102,6 +102,8 @@ public class Piirturi extends JPanel implements KeyListener {
                 if (oikeaKoodi[i].getVari() == 1) {
                     g.setColor(Color.RED);
                     g.fillRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
                 }
                 if (oikeaKoodi[i].getVari() == 2) {
                     g.setColor(Color.GREEN);
@@ -219,7 +221,8 @@ public class Piirturi extends JPanel implements KeyListener {
                     JOptionPane.showMessageDialog(this, "VOITIT!!");
                     arvausMaara=rivi+1;
                     winCondition =1;
-                    System.out.println(arvausMaara);
+                    
+                    JOptionPane.showInputDialog("Teit hyvän tuloksen! \n Anna nimesi:  ");
                     
 
                 } else if (tulos[3] != 2 && rivi == 9) {
@@ -231,7 +234,9 @@ public class Piirturi extends JPanel implements KeyListener {
                     repaint();
                     JOptionPane.showMessageDialog(this, "GAME OVER!");
                     arvausMaara=rivi+1;
-                    System.out.println(arvausMaara);
+                    
+                    
+                    
                 }
 
 
@@ -301,14 +306,21 @@ public class Piirturi extends JPanel implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
     }
-
+    /**
+     * Palauttaa true jos riviin on asetettu 4 nappia
+     * @return true/false
+     */
+    
     public boolean riviTaynna() {
         if (arvaukset[rivi][3].getVari() != -1) {
             return true;
         }
         return false;
     }
-
+   /**
+     * Palauttaa true, jos viimeinen arvaus on käytetty, muuten false
+     * @return 
+     */
     public boolean taulukkoTaynna() {
         if (arvaukset[9][3].getVari() != -1) {
             return true;
@@ -316,7 +328,5 @@ public class Piirturi extends JPanel implements KeyListener {
         return false;
     }
     
-    public int getWinConditioin(){
-        return winCondition;
-    }
+   
 }

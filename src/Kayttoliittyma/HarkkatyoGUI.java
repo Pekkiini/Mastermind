@@ -105,7 +105,7 @@ public class HarkkatyoGUI extends javax.swing.JFrame {
 
 private void aloitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aloitaActionPerformed
 // TODO add your handling code here:
-    logiikka.aloitaPeli();
+    
 }//GEN-LAST:event_aloitaActionPerformed
 
 private void piirtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piirtoActionPerformed

@@ -7,6 +7,7 @@ import java.util.Scanner;
  */
 
 /**
+ * Tätä luokkaa ei GUIssa käytetä
  * Käy vuoropuhelua käyttäjän kanssa. Lukee käyttäjän syötteen. 
  * @author pekkotuo
  */

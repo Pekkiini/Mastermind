@@ -21,18 +21,7 @@ public class HARKKATYO {
         Piirturi piirturi = new Piirturi();
         Container container = ikkuna.getContentPane();
         container.add(piirturi);
-        ikkuna.addKeyListener(piirturi);
-
-//       NapinKuuntelija kuuntelija =  new NapinKuuntelija();
-       
-       //        JButton uusipeli = new JButton(); 
-//        uusipeli.setText("Uusi Peli");
-//        uusipeli.setSize(30, 30);    
-       // container.add(uusipeli, BorderLayout.NORTH);
-//        uusipeli.setLocation(500, 30);
-//        uusipeli.addActionListener(kuuntelija);
-       
-       
+        ikkuna.addKeyListener(piirturi);       
         ikkuna.setSize(830, 700);
         ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ikkuna.setVisible(true);

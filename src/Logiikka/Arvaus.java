@@ -27,7 +27,7 @@ public class Arvaus {
     }
 
     /**
-     * 
+     * Tämäkään ei liity GUIhin
      * @return palauttaa pelaajan arvauksen, sekä siihen liitetyn palautteen
      */
     public String palautaArvaus() {
@@ -71,7 +71,7 @@ public class Arvaus {
         return nappulaLuvut;
     }
     /**
-     * 
+     * Ei käytössä GUIssa
      * @param palaute on kokonaislukutaulukko, joka kertoo miten monta mustaa
      * ja valkoista palautemerkkiä pelaajan arvaus ansaitsi
      */

@@ -5,7 +5,8 @@
 package Kayttoliittyma;
 
 /**
- *
+ * Yksittäisestä napista luodaan kuvio-olio, joka tuntee oman 
+ * värinsä ja sijaintinsa. Piirturi piirtää kuvioita ruudulle
  * @author pekkotuo
  */
 public class kuvio {

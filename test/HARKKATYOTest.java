@@ -53,19 +53,19 @@ public class HARKKATYOTest {
         assertNotSame(null, arpoja.getNappula(1));
     }
     
-    @Test
-    public void rivinTarkistusToimii(){
-        Lukija lukija = new Lukija();
-        int [] rivi = {1,2,3,8};
-        assertEquals(false, lukija.tarkistaArvaus(rivi));
-    }
+//    @Test
+//    public void rivinTarkistusToimii(){
+//        Lukija lukija = new Lukija();
+//        int [] rivi = {1,2,3,8};
+//        assertEquals(false, lukija.tarkistaArvaus(rivi));
+//    }
     
-    @Test 
-    public void rivinTarkistusToimiiHyvin(){
-        Lukija lukija = new Lukija();
-        int [] rivi = {1,0,3,5};
-        assertEquals(true, lukija.tarkistaArvaus(rivi));
-    }
+//    @Test 
+//    public void rivinTarkistusToimiiHyvin(){
+//        Lukija lukija = new Lukija();
+//        int [] rivi = {1,0,3,5};
+//        assertEquals(true, lukija.tarkistaArvaus(rivi));
+//    }
     
     @Test
     public void tuomariAntaaOikeatVihjeet(){
@@ -126,14 +126,14 @@ public class HARKKATYOTest {
     }
    
    
-    @Test
-    public void muistiinLisaystoimii(){
-        Muisti muisti = new Muisti();
-        int [] taulu = {1,2,3,4};
-        Arvaus arvaus = new Arvaus(taulu);
-        muisti.lisaaArvaus(arvaus);
-        assertNotSame(null, muisti.siirrot.get(0));
-    }
+//    @Test
+//    public void muistiinLisaystoimii(){
+//        Muisti muisti = new Muisti();
+//        int [] taulu = {1,2,3,4};
+//        Arvaus arvaus = new Arvaus(taulu);
+//        muisti.lisaaArvaus(arvaus);
+//        assertNotSame(null, muisti.siirrot.get(0));
+//    }
     @Test
     public void logicaOsaaTuomita(){
         Logica logiikka = new Logica();
