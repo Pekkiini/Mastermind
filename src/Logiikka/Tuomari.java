@@ -16,8 +16,14 @@ public class Tuomari {
     private int valkoistenMaara;
     private ArrayList<Integer> koneentarkastettavatIndeksit;
     private ArrayList<Integer> pelaajantarkastettavatIndeksit;
+    private int [] vinkit;
+    private ArrayList<Integer> vinkinTaytettavatIndeksit;
 
     public Tuomari() {
+        vinkit = new int [4];
+        for(int i =0 ; i<4;i++){
+            vinkit [i] = 0;
+        }
         mustienMaara = 0;
         valkoistenMaara = 0;
         koneentarkastettavatIndeksit = new ArrayList<Integer>();
@@ -25,6 +31,9 @@ public class Tuomari {
 
         pelaajantarkastettavatIndeksit = new ArrayList<Integer>();
         alusta(pelaajantarkastettavatIndeksit);
+        
+        vinkinTaytettavatIndeksit = new ArrayList<Integer>();
+        alusta(vinkinTaytettavatIndeksit); 
     }
     /**
      * Vertaa pelaajan arvausta ohjelman koodiin
@@ -44,13 +53,30 @@ public class Tuomari {
 //        palautus = palautus + "Vinkki.  Mustia: " + mustienMaara + "    Valkoisia: "
 //                + valkoistenMaara;
 
-        tyhjenna(koneentarkastettavatIndeksit);
+        tyhjennaLista(koneentarkastettavatIndeksit);
 
         alusta(koneentarkastettavatIndeksit);
         alusta(pelaajantarkastettavatIndeksit);
-
-        int [] vinkit = {mustienMaara, valkoistenMaara};
+        
+       ArrayList<Integer> apuLista = new ArrayList<Integer>();
+        for(int i = 0 ; i < mustienMaara; i++){
+            vinkit [i] = 2 ;
+            apuLista.add(i);
+        }
+        for(int indeksi : apuLista){
+        vinkinTaytettavatIndeksit.remove(new Integer(indeksi));
+        }
+        if(vinkinTaytettavatIndeksit.isEmpty() != true  ){
+        for(int i =vinkinTaytettavatIndeksit.get(0) ; i<4;i++ ){
+            if(valkoistenMaara>0){
+                vinkit[i] = 1 ;
+                valkoistenMaara--;
+            }
+        }
+        }
         pelaaja.lisaaPalaute(vinkit);
+        tyhjennaLista(vinkinTaytettavatIndeksit);
+        alusta(vinkinTaytettavatIndeksit);
         mustienMaara = 0;
         valkoistenMaara = 0;
 
@@ -125,6 +151,16 @@ public class Tuomari {
         }
         for (int luku : koneenRivistaPoistettavat) {
             koneentarkastettavatIndeksit.remove(new Integer(luku));
+        }
+    }
+    
+    public void tyhjennaLista(ArrayList<Integer> lista){
+        ArrayList<Integer> helppiLista = new ArrayList<Integer>();
+        for(int luku:lista){
+            helppiLista.add(luku);
+        }
+        for(int luku : helppiLista){
+            lista.remove(new Integer(luku));
         }
     }
 }

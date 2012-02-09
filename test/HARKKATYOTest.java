@@ -71,7 +71,7 @@ public class HARKKATYOTest {
     public void tuomariAntaaOikeatVihjeet(){
         int [] ihmisen = {0,1,2,3};
         int [] koneen =  {2,3,4,5};
-        int [] oikea = {0,2};
+        int [] oikea = {1,1,0,0};
         Arvaus ihmisenArvaus = new Arvaus(ihmisen);
         Arvaus koneenArvaus = new Arvaus(koneen);
         Tuomari tuomari = new Tuomari();
@@ -83,7 +83,7 @@ public class HARKKATYOTest {
     public void tuomariAntaaOikeatVihjeet2(){
         int [] ihmisen = {2,3,2,3};
         int [] koneen =  {2,3,4,5};
-        int [] oikea = {2,0};
+        int [] oikea = {2,2,0,0};
         Arvaus ihmisenArvaus = new Arvaus(ihmisen);
         Arvaus koneenArvaus = new Arvaus(koneen);
         Tuomari tuomari = new Tuomari();
@@ -95,7 +95,7 @@ public class HARKKATYOTest {
     public void tuomariAntaaOikeatVihjeet3(){
         int [] ihmisen = {1,1,1,1};
         int [] koneen =  {2,3,4,5};
-        int [] oikea = {0,0};
+        int [] oikea = {0,0,0,0};
         Arvaus ihmisenArvaus = new Arvaus(ihmisen);
         Arvaus koneenArvaus = new Arvaus(koneen);
         Tuomari tuomari = new Tuomari();
@@ -106,7 +106,7 @@ public class HARKKATYOTest {
     public void tuomariAntaaOikeatVihjeet4(){
         int [] ihmisen = {2,3,4,4};
         int [] koneen =  {4,2,3,3};
-        int [] oikea = {0,3};
+        int [] oikea = {1,1,1,0};
         Arvaus ihmisenArvaus = new Arvaus(ihmisen);
         Arvaus koneenArvaus = new Arvaus(koneen);
         Tuomari tuomari = new Tuomari();
@@ -117,7 +117,7 @@ public class HARKKATYOTest {
     public void tuomariAntaaOikeatVihjeet5(){
         int [] ihmisen = {4,4,1,2};
         int [] koneen =  {4,4,1,5};
-        int [] oikea = {3,0};
+        int [] oikea = {2,2,2,0};
         Arvaus ihmisenArvaus = new Arvaus(ihmisen);
         Arvaus koneenArvaus = new Arvaus(koneen);
         Tuomari tuomari = new Tuomari();
@@ -142,8 +142,19 @@ public class HARKKATYOTest {
         Arvaus p = new Arvaus(pelaaja);
         Arvaus k = new Arvaus(kone);
         int [] actual = logiikka.tuomitse(p, k);
-        int [] oikea = {2,2};
+        int [] oikea = {2,2,1,1};
        assertArrayEquals(null, oikea, actual);
+    }
+    @Test
+    public void toimiikoTuomariAina(){
+        int [] ihmisen = {3,4,4,1};
+        int [] koneen =  {4,1,4,3};
+        int [] oikea = {2,1,1,1};
+        Arvaus ihmisenArvaus = new Arvaus(ihmisen);
+        Arvaus koneenArvaus = new Arvaus(koneen);
+        Tuomari tuomari = new Tuomari();
+        tuomari.vertaaRiveja(ihmisenArvaus, koneenArvaus);
+        assertArrayEquals(oikea, ihmisenArvaus.getPalaute());
     }
     
 }

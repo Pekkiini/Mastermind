@@ -17,7 +17,7 @@ public class Arvaus {
 
     public Arvaus() {
         nappulaLuvut = new int[4];
-        palaute = new int[2];
+        palaute = new int[4];
        
     }
     

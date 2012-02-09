@@ -16,13 +16,18 @@ public class kuvio {
     public kuvio(){
         
     }
+    public kuvio(int color, int xk , int yk){
+        this.vari = color;
+        x=xk;
+        y=yk;
+    }
     public int getVari(){
         return this.vari;
     }
-    public int getXKoordinaatti(){
+    public int getX(){
         return this.x;
     }
-    public int getYKoordinaatti(){
+    public int getY(){
         return y;
     }
     

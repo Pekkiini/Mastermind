@@ -43,4 +43,12 @@ public class Logica {
        return tuomari.vertaaRiveja(p, k);
     }
     
+    public Arvaus luoArvaus(int [] taulukko){
+        Arvaus arvaus = new Arvaus(taulukko);
+        return arvaus;
+    }
+    public Arvaus getKoneenRivi(){
+        return koneen;
+    }
+    
 }
