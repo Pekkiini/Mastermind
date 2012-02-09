@@ -64,6 +64,14 @@ public class Piirturi extends JPanel implements KeyListener {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
+        g.setColor(Color.CYAN);
+        g.fillRect(0, 0, 830, 700);
+        g.setColor(Color.BLACK);
+        g.drawRect(1, 1, 830, 700);
+        g.drawRect(2, 2, 830, 700);
+        g.drawRect(3, 3, 830, 700);
+        g.drawRect(4, 4, 830, 700);
+        g.drawRect(5, 5, 830, 700);
         g.setColor(Color.BLUE);
         g.drawString("1 = SININEN ", 600, 30);
         
@@ -82,13 +90,13 @@ public class Piirturi extends JPanel implements KeyListener {
         g.setColor(Color.BLACK);
         g.drawString("6 = MUSTA", 600, 280);
         
-        g.setColor(Color.CYAN);
+        g.setColor(Color.DARK_GRAY);
         g.drawString("'ENTER' = LUKITSE ARVAUS ", 600, 330);
         
-        g.setColor(Color.CYAN);
+        g.setColor(Color.DARK_GRAY);
         g.drawString("'BACKSPACE' = PERU SIIRTO", 600, 380);
         
-        g.setColor(Color.CYAN);
+        g.setColor(Color.DARK_GRAY);
         g.drawString("'F2' = UUSI PELI", 600, 430);
 
 
@@ -97,7 +105,8 @@ public class Piirturi extends JPanel implements KeyListener {
                 if (oikeaKoodi[i].getVari() == 0) {
                     g.setColor(Color.BLUE);
                     g.fillRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
-
+                    g.setColor(Color.BLACK);
+                    g.drawRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
                 }
                 if (oikeaKoodi[i].getVari() == 1) {
                     g.setColor(Color.RED);
@@ -108,18 +117,26 @@ public class Piirturi extends JPanel implements KeyListener {
                 if (oikeaKoodi[i].getVari() == 2) {
                     g.setColor(Color.GREEN);
                     g.fillRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
                 }
                 if (oikeaKoodi[i].getVari() == 3) {
                     g.setColor(Color.YELLOW);
                     g.fillRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
                 }
                 if (oikeaKoodi[i].getVari() == 4) {
                     g.setColor(Color.WHITE);
                     g.fillRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
                 }
                 if (oikeaKoodi[i].getVari() == 5) {
                     g.setColor(Color.BLACK);
                     g.fillRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
                 }
             }
         }
@@ -129,12 +146,18 @@ public class Piirturi extends JPanel implements KeyListener {
                 if (vinkki[a][b].getVari() == 0) {
                     g.setColor(Color.PINK);
                     g.fillOval(vinkki[a][b].getX(), vinkki[a][b].getY(), 20, 20);
+                    g.setColor(Color.BLACK);
+                    g.drawOval(vinkki[a][b].getX(), vinkki[a][b].getY(), 20, 20);
                 } else if (vinkki[a][b].getVari() == 1) {
                     g.setColor(Color.WHITE);
                     g.fillOval(vinkki[a][b].getX(), vinkki[a][b].getY(), 20, 20);
+                    g.setColor(Color.BLACK);
+                    g.drawOval(vinkki[a][b].getX(), vinkki[a][b].getY(), 20, 20);
                 } else if (vinkki[a][b].getVari() == 2) {
                     g.setColor(Color.BLACK);
                     g.fillOval(vinkki[a][b].getX(), vinkki[a][b].getY(), 20, 20);
+                    g.setColor(Color.BLACK);
+                    g.drawOval(vinkki[a][b].getX(), vinkki[a][b].getY(), 20, 20);
                 }
             }
         }
@@ -143,32 +166,43 @@ public class Piirturi extends JPanel implements KeyListener {
                 if (arvaukset[a][b].getVari() == 0) {
                     g.setColor(Color.BLUE);
                     g.fillRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
-
+                    g.setColor(Color.BLACK);
+                    g.drawRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
 
                 } else if (arvaukset[a][b].getVari() == 1) {
                     g.setColor(Color.RED);
                     g.fillRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
+                     g.setColor(Color.BLACK);
+                    g.drawRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
 
 
                 } else if (arvaukset[a][b].getVari() == 2) {
                     g.setColor(Color.GREEN);
                     g.fillRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
+                     g.setColor(Color.BLACK);
+                    g.drawRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
 
 
 
                 } else if (arvaukset[a][b].getVari() == 3) {
                     g.setColor(Color.YELLOW);
                     g.fillRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
+                     g.setColor(Color.BLACK);
+                    g.drawRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
 
 
                 } else if (arvaukset[a][b].getVari() == 4) {
                     g.setColor(Color.WHITE);
                     g.fillRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
+                     g.setColor(Color.BLACK);
+                    g.drawRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
 
 
                 } else if (arvaukset[a][b].getVari() == 5) {
                     g.setColor(Color.BLACK);
                     g.fillRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
+                     g.setColor(Color.BLACK);
+                    g.drawRect(arvaukset[a][b].getX(), arvaukset[a][b].getY(), 30, 30);
 
                 }
             }
