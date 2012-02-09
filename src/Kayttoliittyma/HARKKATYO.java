@@ -33,7 +33,7 @@ public class HARKKATYO {
 //        uusipeli.addActionListener(kuuntelija);
        
        
-        ikkuna.setSize(780, 700);
+        ikkuna.setSize(830, 700);
         ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ikkuna.setVisible(true);
 

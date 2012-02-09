@@ -64,6 +64,32 @@ public class Piirturi extends JPanel implements KeyListener {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
+        g.setColor(Color.BLUE);
+        g.drawString("1 = SININEN ", 600, 30);
+        
+        g.setColor(Color.RED);
+        g.drawString("2 = PUNAINEN", 600, 80);
+        
+        g.setColor(Color.GREEN);
+        g.drawString("3 = VIHREÄ", 600, 130);
+        
+        g.setColor(Color.YELLOW);
+        g.drawString("4 = KELTAINEN", 600, 180);
+        
+        g.setColor(Color.WHITE);
+        g.drawString("5 = VALKOINEN", 600, 230);
+        
+        g.setColor(Color.BLACK);
+        g.drawString("6 = MUSTA", 600, 280);
+        
+        g.setColor(Color.CYAN);
+        g.drawString("'ENTER' = LUKITSE ARVAUS ", 600, 330);
+        
+        g.setColor(Color.CYAN);
+        g.drawString("'BACKSPACE' = PERU SIIRTO", 600, 380);
+        
+        g.setColor(Color.CYAN);
+        g.drawString("'F2' = UUSI PELI", 600, 430);
 
 
         if (oikeaKoodi[3].getVari() != -1) {
