@@ -403,7 +403,9 @@ public final class Piirturi extends JPanel implements KeyListener {
         }
         return false;
     }
-
+     /**
+     * Piirtää pelilaudan alkuasetelmaansa 
+     */
     public void alustaPeliLauta() {
         x = 30;
         y = 600;
@@ -448,7 +450,10 @@ public final class Piirturi extends JPanel implements KeyListener {
         y = 600;
         repaint();
     }
-
+    /**
+     * Lataa aikaisemmin saavutetut hyvät tulokset "mastermind.txt" tiedostosta 
+     * ja tallentaa ne pelin uuden instanssin muistiin.
+     */
     public void lataaHighScore() {
         for (int i = 0; i < lista.size(); i++) {
             lista.remove(i);

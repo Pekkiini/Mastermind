@@ -5,7 +5,8 @@
 package Kayttoliittyma;
 
 /**
- *
+ * Yksittäistä hyvää tulosta mallintava luokka. 
+ * Helpottaa tulosten vertailua. 
  * @author pekkotuo
  */
 public class HighScore {
