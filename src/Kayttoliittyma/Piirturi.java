@@ -45,7 +45,7 @@ public final class Piirturi extends JPanel implements KeyListener {
     private int winCondition = 0;
     private int arvausMaara = 0;
     private File ennatysLista = new File("mastermind.txt");
-    private Scanner lukija; // = new Scanner("mastermind.txt");
+    private Scanner lukija ; 
     private ArrayList<HighScore> parhaatTulokset = new ArrayList<HighScore>();
     private ArrayList<String> lista = new ArrayList<String>();
 

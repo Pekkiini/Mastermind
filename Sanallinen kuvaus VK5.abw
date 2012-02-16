@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" styles="unlocked" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="8" xmlns:dc="http://purl.org/dc/elements/1.1/" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.9.1" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-GB; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="dc.format">application/x-abiword</m>
+<m key="abiword.generator">AbiWord</m>
+</metadata>
+<history version="2" edit-time="558" last-saved="1329402304" uid="b84e1cee-58a8-11e1-9d6f-c22f5fab8534">
+<version id="2" started="1329402298" uid="04e0356e-58aa-11e1-9d6f-c22f5fab8534" auto="0" top-xid="8"/>
+</history>
+<styles>
+<s type="P" name="Normal" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; color:000000; margin-left:0pt; text-position:normal; widows:2; font-style:normal; text-indent:0in; font-variant:normal; font-weight:normal; margin-right:0pt; font-size:12pt; text-decoration:none; margin-bottom:0pt; line-height:1.0; bgcolor:transparent; text-align:left; font-stretch:normal"/>
+</styles>
+<pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+<section xid="5" props="page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-right:1.0000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+<p style="Normal" xid="6"><c>		 </c><c props="font-size:20pt; font-weight:bold; font-style:italic">Ohjelman sanallinen kuvaus VK5</c></p>
+<p style="Normal" xid="1"><c props="font-size:20pt; font-weight:bold; font-style:italic"></c></p>
+<p style="Normal" xid="2"><c props="font-weight:normal; font-size:14pt; font-style:normal">Ohjelmaan lisätty tekstitiedosto, johon kirjataan pelissä hyvin menestyneiden pelaajien nimi ja ratkaisuun johtaneiden arvausten määrä. Tiedostoa lukeva </c><c props="font-size:14pt; font-weight:normal; font-style:italic">Scanner </c><c props="font-weight:normal; font-size:14pt; font-style:normal">sisällytettiin </c><c props="font-size:14pt; font-weight:normal; font-style:italic">Piirturi</c><c props="font-size:14pt; font-weight:normal; font-style:normal">-luokkaan ja tiedostoon kirjoittava </c><c props="font-size:14pt; font-weight:normal; font-style:italic">PrintWriter </c><c props="font-size:14pt; font-weight:normal; font-style:normal">luodaan aina ennen kirjoittamista. Näin voitaisiin menetellä myös </c><c props="font-size:14pt; font-weight:normal; font-style:italic">Scannerin </c><c props="font-size:14pt; font-weight:normal; font-style:normal">kanssa. </c></p>
+<p style="Normal" xid="3"><c props="font-size:14pt; font-weight:normal; font-style:normal"></c></p>
+<p style="Normal" xid="4"><c props="font-weight:normal; font-size:14pt; font-style:normal">Pelilaudasta tehtiin enemmän todellista pelilautaa vastaava ja ohjeet saivat uuden, nätimmän ulkoasun. </c></p>
+<p style="Normal" xid="7"><c props="font-weight:normal; font-size:14pt; font-style:normal"></c></p>
+<p style="Normal" xid="8"><c props="font-size:14pt; font-weight:normal; font-style:italic">UusiPeli</c><c props="font-size:14pt; font-weight:normal; font-style:normal">-toimintoa muokattiin siten, että uuden ikkunan avaamisen sijasta uuden pelin alkaessa, ohjelma vain alustaa pelilaudan lähtötilanteeseen.   </c></p>
+</section>
+</abiword>
