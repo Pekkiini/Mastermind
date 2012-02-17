@@ -1,4 +1,5 @@
-Pekkinii  7
-Charles  6
-Kari  9
-Erkki  5
+Mr.Smith 1
+Pekkiini 1
+John 1
+Kim 2
+Mr.Smith 4

@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 /*
@@ -45,9 +47,10 @@ public final class Piirturi extends JPanel implements KeyListener {
     private int winCondition = 0;
     private int arvausMaara = 0;
     private File ennatysLista = new File("mastermind.txt");
-    private Scanner lukija ; 
+    private Scanner lukija;
     private ArrayList<HighScore> parhaatTulokset = new ArrayList<HighScore>();
     private ArrayList<String> lista = new ArrayList<String>();
+    private String pisteet;
 
     public Piirturi() {
         lataaHighScore();
@@ -113,7 +116,7 @@ public final class Piirturi extends JPanel implements KeyListener {
         g.setColor(Color.DARK_GRAY.darker());
         g.drawString("'F2' = UUSI PELI", 600, 450);
 
-       
+
         for (int i = 0; i < 4; i++) {
 
             if (oikeaKoodi[i].getVari() == -1) {
@@ -161,7 +164,7 @@ public final class Piirturi extends JPanel implements KeyListener {
                 g.drawRect(oikeaKoodi[i].getX(), oikeaKoodi[i].getY(), 30, 30);
             }
         }
-        
+
 
         for (int a = 0; a < 10; a++) {
             for (int b = 0; b < 4; b++) {
@@ -276,7 +279,7 @@ public final class Piirturi extends JPanel implements KeyListener {
                     s += 40;
                 }
 
-                if (tulos[3] == 2) {
+                if (tulos[0] == 2) {
                     try {
                         PrintWriter kirjoittaja = new PrintWriter(new FileWriter("mastermind.txt"), true);
                         winCondition = 1;
@@ -288,18 +291,59 @@ public final class Piirturi extends JPanel implements KeyListener {
                         JOptionPane.showMessageDialog(this, "VOITIT!!");
                         arvausMaara = rivi + 1;
                         winCondition = 1;
-                        if (arvausMaara <= 7) {
-                            String pelaajanNimi = JOptionPane.showInputDialog("Teit hyvän tuloksen! \n Anna nimesi:  ");
-                            HighScore score = new HighScore(pelaajanNimi, arvausMaara);
-                            String lisattava = pelaajanNimi + "  " + arvausMaara;
-                            lista.add(lisattava);
-                            parhaatTulokset.add(score);
+                        if (parhaatTulokset.size() != 0) {
+                            if (arvausMaara <= parhaatTulokset.get(parhaatTulokset.size() - 1).getArvauset()) {
+                                String pelaajanNimi = JOptionPane.showInputDialog("Teit hyvän tuloksen! \n Anna nimesi:  ");
+                                if (pelaajanNimi == null) {
+                                    pelaajanNimi = "Mr.Smith";
+                                }
+                                if (pelaajanNimi.equals("")) {
+                                    pelaajanNimi = "Mr.Smith";
+                                }
+                                HighScore score = new HighScore(pelaajanNimi, arvausMaara);
+                                int poistettavanPaikka = -1;
+                                for (HighScore verrattava : parhaatTulokset) {
+                                    if (score.getArvauset() <= verrattava.getArvauset()) {
+                                        poistettavanPaikka = parhaatTulokset.indexOf(verrattava);
 
+                                        break;
+                                    }
+                                }
+                                if (poistettavanPaikka >= 0) {
+                                    parhaatTulokset.remove(parhaatTulokset.size() - 1);
+                                    parhaatTulokset.add(score);
+                                }
+                                Collections.sort(parhaatTulokset);
+
+                                for (HighScore high : parhaatTulokset) {
+                                    kirjoittaja.println(high.getNimi() + " " + high.getArvauset());
+                                }
+                                kirjoittaja.close();
+                                pisteet = "";
+                                Scanner reader = new Scanner(ennatysLista);
+                                while (reader.hasNextLine()) {
+                                    String lisays = reader.nextLine();
+       //!!!!!!!!!!!!               //!!!!!!!!!      lisays.split("\\ ");
+                                    pisteet += lisays + "\n";
+                                }
+                                JOptionPane.showMessageDialog(HARKKATYO.ikkuna, pisteet, "HighScores", JOptionPane.PLAIN_MESSAGE);
+                            }
                         }
-                        for (String nimi : lista) {
-                            kirjoittaja.println(nimi);
+                        if (parhaatTulokset.size() != 0) {
+                            if (arvausMaara > parhaatTulokset.get(parhaatTulokset.size() - 1).getArvauset()) {
+                                for (HighScore high : parhaatTulokset) {
+                                    kirjoittaja.println(high.getNimi() + " " + high.getArvauset());
+                                }
+                                kirjoittaja.close();
+                                pisteet = "";
+                                Scanner reader = new Scanner(ennatysLista);
+                                while (reader.hasNextLine()) {
+                                    String lisays = reader.nextLine();
+                                    pisteet += lisays + "\n";
+                                }
+                                JOptionPane.showMessageDialog(HARKKATYO.ikkuna, pisteet, "HighScores", JOptionPane.PLAIN_MESSAGE);
+                            }
                         }
-                        kirjoittaja.close();
                     } catch (IOException ax) {
                         Logger.getLogger(Piirturi.class.getName()).log(Level.SEVERE, null, ax);
 
@@ -314,6 +358,12 @@ public final class Piirturi extends JPanel implements KeyListener {
                     repaint();
                     JOptionPane.showMessageDialog(this, "GAME OVER!");
                     arvausMaara = rivi + 1;
+                    pisteet = "";
+                    for (HighScore score : parhaatTulokset) {
+                        pisteet += score.toString();
+                    }
+
+                    JOptionPane.showMessageDialog(HARKKATYO.ikkuna, pisteet, "HighScores", JOptionPane.PLAIN_MESSAGE);
 
                 }
 
@@ -334,6 +384,7 @@ public final class Piirturi extends JPanel implements KeyListener {
                 x = 30;
                 y -= 50;
             }
+
         }
         if (e.getKeyCode() == 49 && riviTaynna() == false && winCondition != 1) {
             vari = 0;
@@ -403,7 +454,8 @@ public final class Piirturi extends JPanel implements KeyListener {
         }
         return false;
     }
-     /**
+
+    /**
      * Piirtää pelilaudan alkuasetelmaansa 
      */
     public void alustaPeliLauta() {
@@ -450,6 +502,7 @@ public final class Piirturi extends JPanel implements KeyListener {
         y = 600;
         repaint();
     }
+
     /**
      * Lataa aikaisemmin saavutetut hyvät tulokset "mastermind.txt" tiedostosta 
      * ja tallentaa ne pelin uuden instanssin muistiin.
@@ -463,14 +516,20 @@ public final class Piirturi extends JPanel implements KeyListener {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Piirturi.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         if (lukija.hasNextLine()) {
             while (lukija.hasNextLine()) {
                 String row = lukija.nextLine();
-                lista.add(row);
+                String[] taulu = row.split(" ");
+                int i = Integer.parseInt(taulu[1]);
+                parhaatTulokset.add(new HighScore(taulu[0], i));
             }
-
         }
         lukija.close();
+        Collections.sort(parhaatTulokset);
+        if (parhaatTulokset.size() == 0) {
+            for (int k = 0; k < 5; k++) {
+                parhaatTulokset.add(new HighScore("<empty>", 999));
+            }
+        }
     }
 }

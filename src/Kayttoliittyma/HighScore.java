@@ -4,12 +4,14 @@
  */
 package Kayttoliittyma;
 
+import java.util.HashMap;
+
 /**
  * Yksittäistä hyvää tulosta mallintava luokka. 
  * Helpottaa tulosten vertailua. 
  * @author pekkotuo
  */
-public class HighScore {
+public class HighScore implements Comparable<HighScore> {
     private String nimi ;
     private int arvaukset ;
     
@@ -30,5 +32,14 @@ public class HighScore {
     }
     public void setArvaukset(int luku){
         this.arvaukset = luku ;
+    }
+
+    @Override
+    public int compareTo(HighScore t) {
+       return this.arvaukset-t.arvaukset;
+        
+    }
+    public String toString() {
+        return ""+ nimi+  this.arvaukset+"\n";
     }
 }
