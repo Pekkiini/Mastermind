@@ -40,6 +40,6 @@ public class HighScore implements Comparable<HighScore> {
         
     }
     public String toString() {
-        return ""+ nimi+  this.arvaukset+"\n";
+        return ""+ nimi+ " "+ this.arvaukset+"\n";
     }
 }

@@ -1,5 +1,5 @@
-Mr.Smith 1
-Pekkiini 1
-John 1
-Kim 2
-Mr.Smith 4
+Mr. Smith 1
+Erkki Esimerkki  6
+<empty>  999
+<empty>  999
+<empty>  999
