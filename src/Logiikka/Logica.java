@@ -5,7 +5,7 @@
 package Logiikka;
 
 /**
- * Toimii GUI:n ja muiden luokkien välikätenä
+ * Toimii GUI:n ja muiden luokkien välisenä tulkkina
  * Käyttää vain tuntemiensa luokkien metodeja
  * @author pekkotuo
  */
@@ -30,11 +30,20 @@ public class Logica {
         return tuomari.vertaaRiveja(p, k);
     }
 
+    /**
+     * 
+     * @param int taulukko
+     * @return palauttaa Arvaus olion
+     */
     public Arvaus luoArvaus(int[] taulukko) {
         Arvaus arvaus = new Arvaus(taulukko);
         return arvaus;
     }
 
+    /**
+     * 
+     * @return palauttaa Ohjelman generoiman rivin 
+     */
     public Arvaus getKoneenRivi() {
         return koneen;
     }

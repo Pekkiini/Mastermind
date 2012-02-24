@@ -29,7 +29,7 @@ import java.util.Scanner;
  */
 public final class Piirturi extends JPanel implements KeyListener {
 
-    private HARKKATYO harkkatyo;
+   
     private Logica logiikka;
     private kuvio[][] arvaukset;
     private kuvio[] oikeaKoodi;
@@ -115,7 +115,7 @@ public final class Piirturi extends JPanel implements KeyListener {
 
         g.setColor(Color.DARK_GRAY.darker());
         g.drawString("'F2' = UUSI PELI", 600, 450);
-        
+
         g.setColor(Color.DARK_GRAY.darker());
         g.drawString("'F1' = OHJEET", 600, 500);
 
@@ -252,19 +252,20 @@ public final class Piirturi extends JPanel implements KeyListener {
 
         // System.out.println(e.getKeyCode());
 
-        if(e.getKeyCode()==112){
+        if (e.getKeyCode() == 112) {
             String ohjeet = "Mastermind on peli, jossa pelaajan täytyy ratkaista \n"
-                    +"salainen värikoodi. Koodi koostuu neljästä väristä, joita \n "
-                    +"käytössä on kuusi. Arvauksia pelaaja saa käyttää enintään 10. \n "
-                    +"Jokaisen tehdyn arvauksen jälkeen pelaaja saa palautteen siitä, \n"
-                    +"miten lähelle arvaus osui. Musta merkki tarkoittaa oikeaa väriä \n"
-                    +"oikeassa paikassa, valkoinen merkki taas oikeaa väriä väärässä \n"
-                    +"paikassa. Jos yhtään merkkiä ei ilmesty vinkkitaulukkoon, \n"
-                    +"tarkoittaa se sitä, että yksikään arvauksen väreistä ei esiinny \n"
-                    +"ratkaistavassa koodissa. Pelaaja voittaa pelin ratkaistessaan \n"
-                    +"koodin 10. arvaukseen mennessä, muutoin pelaaja häviää. Myös \n"
-                    +"luovuttaminen katsotaan pelaajan tappioksi.";
-                      
+                    + "salainen värikoodi. Koodi koostuu neljästä väristä, joita \n "
+                    + "käytössä on kuusi. Arvauksia pelaaja saa käyttää enintään 10. \n "
+                    + "Jokaisen tehdyn arvauksen jälkeen pelaaja saa palautteen siitä, \n"
+                    + "miten lähelle arvaus osui. Musta merkki tarkoittaa oikeaa väriä \n"
+                    + "oikeassa paikassa, valkoinen merkki taas oikeaa väriä väärässä \n"
+                    + "paikassa. Jos yhtään merkkiä ei ilmesty vinkkitaulukkoon, \n"
+                    + "tarkoittaa se sitä, että yksikään arvauksen väreistä ei esiinny \n"
+                    + "ratkaistavassa koodissa. Pelaaja voittaa pelin ratkaistessaan \n"
+                    + "koodin 10. arvaukseen mennessä, muutoin pelaaja häviää. Myös \n"
+                    + "luovuttaminen katsotaan pelaajan tappioksi. \n"
+                    + "Peliä pelataan numeronäppäimillä 1-6.";
+
             JOptionPane.showMessageDialog(this, ohjeet, "Ohjeet", JOptionPane.INFORMATION_MESSAGE);
         }
         if (e.getKeyCode() == 113) {
@@ -333,16 +334,11 @@ public final class Piirturi extends JPanel implements KeyListener {
                                 Collections.sort(parhaatTulokset);
 
                                 for (HighScore high : parhaatTulokset) {
-                                    kirjoittaja.println(high.getNimi() +" "+  high.getArvauset());
+                                    kirjoittaja.println(high.getNimi() + " " + high.getArvauset());
                                 }
                                 kirjoittaja.close();
                                 pisteet = "";
-//                                Scanner reader = new Scanner(ennatysLista);
-//                                while (reader.hasNextLine()) {
-//                                    String lisays = reader.nextLine();
-//       //!!!!!!!!!!!!               //!!!!!!!!!      lisays.split("\\ ");
-//                                    pisteet += lisays + "\n";
-//                                }
+
                                 for (HighScore point : parhaatTulokset) {
                                     pisteet += point.toString();
                                 }
@@ -356,11 +352,7 @@ public final class Piirturi extends JPanel implements KeyListener {
                                 }
                                 kirjoittaja.close();
                                 pisteet = "";
-//                                Scanner reader = new Scanner(ennatysLista);
-//                                while (reader.hasNextLine()) {
-//                                    String lisays = reader.nextLine();
-//                                    pisteet += lisays + "\n";
-//                                }
+
                                 for (HighScore boint : parhaatTulokset) {
                                     pisteet += boint.toString();
                                 }
@@ -545,7 +537,7 @@ public final class Piirturi extends JPanel implements KeyListener {
                 String[] taulu = row.split(" ");
                 String name = "";
                 int i = Integer.parseInt(taulu[taulu.length - 1]);
-                for(int k = 0; k < taulu.length - 1; k++) {
+                for (int k = 0; k < taulu.length - 1; k++) {
                     name += taulu[k] + " ";
                 }
                 parhaatTulokset.add(new HighScore(name, i));

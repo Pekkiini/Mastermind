@@ -23,6 +23,7 @@ import javax.swing.WindowConstants;
  * @author pekkotuo
  */
 public class HARKKATYO {
+
     public static JFrame ikkuna;
 
     public HARKKATYO() {
@@ -31,23 +32,22 @@ public class HARKKATYO {
         Container container = ikkuna.getContentPane();
         container.add(piirturi);
         ikkuna.addKeyListener(piirturi);
-
         ikkuna.setSize(830, 700);
         ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ikkuna.setVisible(true);
-        
-
-
     }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //new HARKKATYO();
+        java.awt.EventQueue.invokeLater(new Runnable() {
 
-
-        new HARKKATYO();
-
-
+            @Override
+            public void run() {
+                new HARKKATYO();
+            }
+        });
     }
 }

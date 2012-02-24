@@ -25,28 +25,7 @@ public class Arvaus {
         this.nappulaLuvut = taulukko;
         
     }
-
-    /**
-     * Tämäkään ei liity GUIhin
-     * @return palauttaa pelaajan arvauksen, sekä siihen liitetyn palautteen
-     */
-    public String palautaArvaus() {
-        String alku = "";
-        for (int luku : nappulaLuvut) {
-            alku = alku + luku+ " ";
-            
-        }
-        alku = alku + "     " + "Mustia "+palaute[0]+ "  "+"Valkoisia " + palaute[1] ;
-        return alku;
-    }
-
-    /**
-     * Asettaa oliolle arvauksen
-     * @param arvaus on kokonaislukutaulukko 
-     */
-    public void asetaArvaus(int [] arvaus) {
-        nappulaLuvut = arvaus; 
-    }
+    
     /**
      * 
      * @param indeksi on haettava indeksi
@@ -55,23 +34,9 @@ public class Arvaus {
     public int haeIndeksi(int indeksi){
         return nappulaLuvut [indeksi];
     }
+    
     /**
-     * 
-     * @param i on muokattava indeksi
-     * @param n on kohtaan i asetettava luku
-     */
-    public void asetaIndeksi(int i , int n){
-        nappulaLuvut [i] = n ;
-    }
-    /**
-     * 
-     * @return palauttaa arvauksen 
-     */
-    public int [] haeArvaus(){
-        return nappulaLuvut;
-    }
-    /**
-     * Ei käytössä GUIssa
+     * Asettaa Arvaus oliolle palautteen
      * @param palaute on kokonaislukutaulukko, joka kertoo miten monta mustaa
      * ja valkoista palautemerkkiä pelaajan arvaus ansaitsi
      */
@@ -80,7 +45,7 @@ public class Arvaus {
     }
     /**
      * 
-     * @return Arvaukseen liitetyn palautteen 
+     * @return palauttaa Arvaukseen liitetyn palautteen 
      */
     public int [] getPalaute(){
         return this.palaute;

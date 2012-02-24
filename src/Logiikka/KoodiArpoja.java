@@ -22,7 +22,6 @@ public class KoodiArpoja {
            koodi [i] = arpa.nextInt(6) ;
         }
     }
-
     /**
      * 
      * @param j on haettava indeksi
@@ -30,13 +29,7 @@ public class KoodiArpoja {
      */
     public int getNappula(int j) {
         return koodi [j];
-    }
-    @Override
-    public String toString(){
-        return koodi.toString();
-       
-    }
-    
+    }    
      /**
      * 
      * @return luotu koodi
@@ -44,7 +37,10 @@ public class KoodiArpoja {
     public int [] haeKoodi(){
         return koodi;
     }
-    
+    /**
+     * 
+     * @return palauttaa Arvaus olion 
+     */
     public Arvaus luoArvattavaKoodi(){
         Arvaus koneenKoodi = new Arvaus(haeKoodi());
         return koneenKoodi;
